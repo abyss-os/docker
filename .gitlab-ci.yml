@@ -8,5 +8,5 @@ before_script:
 latest: &latest
   script:
     - docker build -f $CI_JOB_NAME.Dockerfile -t abyss:$CI_JOB_NAME .
-    - docker tag abyss:$CI_JOB_NAME $CI_REGISTRY_IMAGE:$CI_JOB_NAME
-    - docker push $CI_REGISTRY_IMAGE:$CI_JOB_NAME
+    - docker tag abyss:$CI_JOB_NAME $CI_REGISTRY_IMAGE/abyss:$CI_JOB_NAME
+    - docker push $CI_REGISTRY_IMAGE/abyss:$CI_JOB_NAME
