@@ -7,6 +7,6 @@ RUN echo $ABYSS_CORE > /target/etc/apk/repositories
 
 FROM scratch
 COPY --from=builder /target /
-RUN ["/usr/bin/busybox", "--install", "/usr/bin"]
+RUN ["/usr/bin/busybox", "--install", "-s", "/usr/bin"]
 RUN apk fix --no-cache
 CMD ["/bin/sh"]
