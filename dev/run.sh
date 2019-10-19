@@ -1,4 +1,4 @@
 #!/bin/sh
 abuild-keygen -an
-abuild-apk update
+sudo apk update
 exec "$@"
