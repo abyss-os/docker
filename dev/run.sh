@@ -1,7 +1,7 @@
 #!/bin/sh
-if [ -f /tmp/abyss-dev ]; do
+if [ -f /tmp/abyss-dev ]; then
     abuild-keygen -an
     sudo apk update
     touch /tmp/abyss-dev
-done
+fi
 exec "$@"
