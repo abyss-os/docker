@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/abyss-os/docker/abyss:latest AS builder
+FROM abyssos/abyss:latest AS builder
 ARG ABYSS_CORE=https://mirror.getabyss.com/abyss/core
 RUN apk add -X $ABYSS_CORE --no-cache --allow-untrusted --initdb --root /target filesystem
 RUN apk add -X $ABYSS_CORE --no-cache --allow-untrusted --initdb --root /target abyss-keyring ca-certificates apk-tools busybox

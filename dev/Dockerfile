@@ -1,4 +1,4 @@
-FROM docker.pkg.github.com/abyss-os/docker/abyss:latest
+FROM abyssos/abyss:latest
 RUN apk add --no-cache abuild clang lld llvm-binutils llvm-dev musl-dev toolchain
 RUN ln -s /usr/bin/gmake /usr/bin/make
 RUN toolchain none llvm
