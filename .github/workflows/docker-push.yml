@@ -20,8 +20,8 @@ jobs:
     - name: Log into docker.
       run: docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Build ${{ matrix.container }}
-      run: docker build ${{ matrix.container }} -t docker.pkg.github.com/${{ github.repository }}/abyss:${{ matrix.tag }}
+    - name: Build ${{ matrix.tag }}
+      run: docker build ${{ matrix.tag }} -t docker.pkg.github.com/${{ github.repository }}/abyss:${{ matrix.tag }}
     
-    - name: Push ${{ matrix.container }}
+    - name: Push ${{ matrix.tag }}
       run: docker push docker.pkg.github.com/${{ github.repository }}/abyss:${{ matrix.tag }}
