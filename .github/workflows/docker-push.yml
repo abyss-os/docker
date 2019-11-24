@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 4 * * *"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        tag: [latest, dev]
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Log into docker.
+      run: docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Build ${{ matrix.container }}
+      run: docker build ${{ matrix.container }} -t docker.pkg.github.com/${{ github.repository }}/abyss:${{ matrix.tag }}
+    
+    - name: Push ${{ matrix.container }}
+      run: docker push docker.pkg.github.com/${{ github.repository }}/abyss:${{ matrix.tag }}
