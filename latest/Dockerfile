@@ -1,6 +1,6 @@
 FROM abyssos/abyss:latest AS builder
-ARG ABYSS_CORE=https://mirror.getabyss.com/abyss/core
-ARG ABYSS_DEV=https://mirror.getabyss.com/abyss/devel
+ARG ABYSS_CORE=https://mirror.abyss.run/abyss/core
+ARG ABYSS_DEV=https://mirror.abyss.run/abyss/devel
 RUN apk add -X $ABYSS_CORE --no-cache --allow-untrusted --initdb --root /target filesystem
 RUN apk add -X $ABYSS_CORE --no-cache --allow-untrusted --initdb --root /target abyss-keyring ca-certificates apk-tools busybox
 RUN echo $ABYSS_CORE > /target/etc/apk/repositories
