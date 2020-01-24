@@ -20,20 +20,11 @@ jobs:
     - name: Log into github docker repo
       run: docker login docker.pkg.github.com -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Log into docker hub repo
-      run: docker login -u ${{ secrets.DOCKER_HUB_ID }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
-    
     - name: Build ${{ matrix.tag }}
       run: docker build ${{ matrix.tag }} -t abyss:${{ matrix.tag }}
     
     - name: Tag for github docker repo
       run: docker tag abyss:${{ matrix.tag }} docker.pkg.github.com/${{ github.repository }}/abyss:${{ matrix.tag }}
     
-    - name: Tag for docker hub repo
-      run: docker tag abyss:${{ matrix.tag }} abyssos/abyss:${{ matrix.tag }}
-    
     - name: Push to github docker repo
       run: docker push docker.pkg.github.com/${{ github.repository }}/abyss:${{ matrix.tag }}
-
-    - name: Push to docker hub repo
-      run: docker push abyssos/abyss:${{ matrix.tag }}
