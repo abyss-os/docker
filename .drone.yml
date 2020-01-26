@@ -43,7 +43,7 @@ common_settings: &cs
     from_secret: DOCKER_USERNAME
   password:
     from_secret: DOCKER_PASSWORD
-  repo: abyssos/abyss
+  repo: abyssos/abyss-archive
 
 steps:
 - name: latest
