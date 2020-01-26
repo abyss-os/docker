@@ -11,7 +11,7 @@ common_settings: &cs
     from_secret: DOCKER_USERNAME
   password:
     from_secret: DOCKER_PASSWORD
-  repo: abyssos/abyss
+  repo: abyssos/abyss-archive
 
 steps:
 - name: latest
@@ -20,14 +20,14 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: latest
+    tags: "latest-$${DRONE_STAGE_ARCH}"
 - name: dev
   image: plugins/docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: dev
+    tags: "dev-$${DRONE_STAGE_ARCH}"
 
 ---
 kind: pipeline
@@ -51,11 +51,11 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: latest
+    tags: "latest-$${DRONE_STAGE_ARCH}"
 - name: dev
   image: plugins/docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: dev
+    tags: "dev-$${DRONE_STAGE_ARCH}"
