@@ -61,3 +61,18 @@ steps:
     context: dev
     dockerfile: dev/Dockerfile
     tags: dev-${DRONE_STAGE_ARCH}
+
+---
+kind: pipeline
+type: docker
+name: manifest
+
+steps:
+- name: create
+  image: abyssos/abyss:dev
+  - commands:
+    - echo do stuff here later
+
+depends_on:
+- x86_64
+- aarch64
