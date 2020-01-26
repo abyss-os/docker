@@ -1,4 +1,3 @@
----
 kind: pipeline
 type: docker
 name: x86_64
@@ -70,8 +69,8 @@ name: manifest
 steps:
 - name: create
   image: abyssos/abyss:dev
-  - commands:
-    - echo do stuff here later
+  commands:
+  - echo do stuff here later
 
 depends_on:
 - x86_64
