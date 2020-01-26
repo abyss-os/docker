@@ -20,14 +20,14 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: "latest-$${DRONE_STAGE_ARCH}"
+    tags: latest-${DRONE_STAGE_ARCH}
 - name: dev
   image: plugins/docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: "dev-$${DRONE_STAGE_ARCH}"
+    tags: dev-${DRONE_STAGE_ARCH}
 
 ---
 kind: pipeline
@@ -51,11 +51,11 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: "latest-$${DRONE_STAGE_ARCH}"
+    tags: latest-${DRONE_STAGE_ARCH}
 - name: dev
   image: plugins/docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: "dev-$${DRONE_STAGE_ARCH}"
+    tags: dev-${DRONE_STAGE_ARCH}
