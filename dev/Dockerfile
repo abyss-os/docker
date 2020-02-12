@@ -1,5 +1,5 @@
 FROM abyssos/abyss:latest
-RUN apk add --no-cache abuild clang linux-dev lld llvm-binutils llvm-dev musl-dev toolchain
+RUN apk add --no-cache abyss-base-dev
 RUN ln -s /usr/bin/gmake /usr/bin/make
 RUN toolchain none llvm
 RUN adduser root abuild
