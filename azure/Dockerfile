@@ -1,9 +1,11 @@
 FROM abyssos/abyss:latest
+RUN apk add --no-cache update
+RUN apk add --no-cache upgrade -a
 RUN apk add --no-cache abyss-base-dev nodejs shadow
 RUN ln -s /usr/bin/gmake /usr/bin/make
 RUN toolchain none llvm
 RUN adduser root abuild
-COPY ./run.sh /
+LABEL "com.azure.dev.pipelines.agent.handler.node.path"="/usr/bin/node"
 COPY ./abuild.conf /root/.abuild/
-ENTRYPOINT ["/run.sh"]
-CMD ["/usr/bin/ash", "--login"]
+RUN abuild-keygen -ain
+CMD [ "node" ]
