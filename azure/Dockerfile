@@ -1,6 +1,6 @@
 FROM abyssos/abyss:latest
-RUN apk add --no-cache update
-RUN apk add --no-cache upgrade -a
+RUN apk update
+RUN apk upgrade -a
 RUN apk add --no-cache abyss-base-dev nodejs shadow
 RUN ln -s /usr/bin/gmake /usr/bin/make
 RUN toolchain none llvm
