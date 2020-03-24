@@ -1,5 +1,5 @@
 FROM abyssos/abyss:latest
-RUN apk add --no-cache abyss-base-dev nodejs
+RUN apk add --no-cache abyss-base-dev nodejs shadow
 RUN ln -s /usr/bin/gmake /usr/bin/make
 RUN toolchain none llvm
 RUN adduser root abuild
