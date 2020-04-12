@@ -34,7 +34,7 @@ steps:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: go-$(DRONE_STAGE_ARCH)
+    tags: go-${DRONE_STAGE_ARCH}
 
 ---
 kind: pipeline
@@ -73,7 +73,7 @@ steps:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: go-$(DRONE_STAGE_ARCH)
+    tags: go-${DRONE_STAGE_ARCH}
 
 ---
 kind: pipeline
