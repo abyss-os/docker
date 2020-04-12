@@ -28,6 +28,13 @@ steps:
     context: dev
     dockerfile: dev/Dockerfile
     tags: dev-${DRONE_STAGE_ARCH}
+- name: go
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: go
+    dockerfile: go/Dockerfile
+    tags: go-$(DRONE_STAGE_ARCH)
 
 ---
 kind: pipeline
@@ -60,6 +67,13 @@ steps:
     context: dev
     dockerfile: dev/Dockerfile
     tags: dev-${DRONE_STAGE_ARCH}
+- name: go
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: go
+    dockerfile: go/Dockerfile
+    tags: go-$(DRONE_STAGE_ARCH)
 
 ---
 kind: pipeline
@@ -71,7 +85,10 @@ common_settings: &cs
     from_secret: DOCKER_USERNAME
   password:
     from_secret: DOCKER_PASSWORD
-  repo: abyssos/abyss-archive
+  ignore_missing: true
+  platforms:
+  - linux/amd64
+  - linux/arm64
 
 steps:
 - name: latest
@@ -80,10 +97,6 @@ steps:
     <<: *cs
     target: abyssos/abyss:latest
     template: abyssos/abyss-archive:latest-ARCH
-    platforms:
-      - linux/amd64
-      - linux/arm64
-    ignore_missing: true
 
 - name: dev
   image: plugins/manifest
@@ -91,10 +104,13 @@ steps:
     <<: *cs
     target: abyssos/abyss:dev
     template: abyssos/abyss-archive:dev-ARCH
-    platforms:
-      - linux/amd64
-      - linux/arm64
-    ignore_missing: true
+
+- name: go
+  image: plugins/manifest
+  settings:
+    <<: *cs
+    target: abyssos/abyss:go
+    template: abyssos/abyss-archive:go-ARCH
 
 depends_on:
 - x86_64
