@@ -116,3 +116,27 @@ steps:
 depends_on:
 - x86_64
 - aarch64
+
+---
+kind: pipeline
+type: docker
+name: drone-manifest
+
+common_settings: &cs
+  username:
+    from_secret: DOCKER_USERNAME
+  password:
+    from_secret: DOCKER_PASSWORD
+  ignore_missing: true
+  platforms:
+  - linux/amd64
+  - linux/arm64
+  - linux/mips64
+
+steps:
+- name: drone-git
+  image: plugins/manifest
+  settings:
+    <<: *cs
+    target: abyssos/junk:drone-git
+    template: abyssos/junk:drone-git-ARCH
