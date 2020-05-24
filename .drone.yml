@@ -89,6 +89,7 @@ common_settings: &cs
   platforms:
   - linux/amd64
   - linux/arm64
+  - linux/mips64
 
 steps:
 - name: latest
