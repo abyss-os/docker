@@ -78,6 +78,84 @@ steps:
 ---
 kind: pipeline
 type: docker
+name: ppc64le
+
+platform:
+  os: linux
+  arch: ppc64le
+
+common_settings: &cs
+  username:
+    from_secret: DOCKER_USERNAME
+  password:
+    from_secret: DOCKER_PASSWORD
+  repo: abyssos/abyss-archive
+
+steps:
+- name: latest
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: latest
+    dockerfile: latest/Dockerfile
+    tags: latest-${DRONE_STAGE_ARCH}
+- name: dev
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: dev
+    dockerfile: dev/Dockerfile
+    tags: dev-${DRONE_STAGE_ARCH}
+- name: go
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: go
+    dockerfile: go/Dockerfile
+    tags: go-${DRONE_STAGE_ARCH}
+
+---
+kind: pipeline
+type: docker
+name: mips64
+
+platform:
+  os: linux
+  arch: mips64
+
+common_settings: &cs
+  username:
+    from_secret: DOCKER_USERNAME
+  password:
+    from_secret: DOCKER_PASSWORD
+  repo: abyssos/abyss-archive
+
+steps:
+- name: latest
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: latest
+    dockerfile: latest/Dockerfile
+    tags: latest-${DRONE_STAGE_ARCH}
+- name: dev
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: dev
+    dockerfile: dev/Dockerfile
+    tags: dev-${DRONE_STAGE_ARCH}
+- name: go
+  image: plugins/docker
+  settings:
+    <<: *cs
+    context: go
+    dockerfile: go/Dockerfile
+    tags: go-${DRONE_STAGE_ARCH}
+
+---
+kind: pipeline
+type: docker
 name: manifest
 
 common_settings: &cs
@@ -121,6 +199,7 @@ steps:
 depends_on:
 - x86_64
 - aarch64
+- ppc64le
 
 ---
 kind: pipeline
