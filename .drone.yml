@@ -116,7 +116,7 @@ steps:
 
 ---
 kind: pipeline
-type: docker
+type: exec
 name: mips64
 
 platform:
@@ -168,11 +168,7 @@ common_settings: &cs
   - linux/amd64
   - linux/arm64
   - linux/mips64
-  - linux/mips64le
   - linux/ppc64le
-  - linux/ppc64
-  - linux/riscv64
-  - linux/s390x
 
 steps:
 - name: latest
@@ -200,6 +196,7 @@ depends_on:
 - x86_64
 - aarch64
 - ppc64le
+- mips64
 
 ---
 kind: pipeline
@@ -216,11 +213,7 @@ common_settings: &cs
   - linux/amd64
   - linux/arm64
   - linux/mips64
-  - linux/mips64le
   - linux/ppc64le
-  - linux/ppc64
-  - linux/riscv64
-  - linux/s390x
 
 steps:
 - name: drone-git
@@ -229,3 +222,9 @@ steps:
     <<: *cs
     target: abyssos/junk:drone-git
     template: abyssos/junk:drone-git-ARCH
+
+depends_on:
+- x86_64
+- aarch64
+- ppc64le
+- mips64
