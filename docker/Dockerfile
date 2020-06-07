@@ -5,11 +5,9 @@ RUN apk add --no-cache \
 		openssh \
 		btrfs-progs \
 		e2fsprogs \
-		e2fsprogs-extra \
 		iptables \
 		openssl \
-		shadow-uidmap \
-		xfsprogs \
+		shadow \
 		xz \
 		pigz \
 		docker
