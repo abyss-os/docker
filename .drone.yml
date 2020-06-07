@@ -15,26 +15,48 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: latest-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:latest-amd64
+
+steps:
 - name: dev
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: dev-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:dev-amd64
+
+steps:
 - name: go
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: go-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:go-amd64
+
+steps:
+- name: drone-git
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: drone-git
+    dockerfile: drone-git/Dockerfile
+    tags: abyssos/abyss-archive:drone-git-amd64
+
+steps:
+- name: docker
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: docker
+    dockerfile: docker/Dockerfile
+    tags: abyssos/abyss-archive:docker-amd64
 
 ---
 kind: pipeline
@@ -54,26 +76,48 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: latest-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:latest-arm64
+
+steps:
 - name: dev
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: dev-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:dev-arm64
+
+steps:
 - name: go
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: go-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:go-arm64
+
+steps:
+- name: drone-git
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: drone-git
+    dockerfile: drone-git/Dockerfile
+    tags: abyssos/abyss-archive:drone-git-arm64
+
+steps:
+- name: docker
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: docker
+    dockerfile: docker/Dockerfile
+    tags: abyssos/abyss-archive:docker-arm64
 
 ---
 kind: pipeline
@@ -93,26 +137,48 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: latest-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:latest-ppc64le
+
+steps:
 - name: dev
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: dev-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:dev-ppc64le
+
+steps:
 - name: go
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: go-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:go-ppc64le
+
+steps:
+- name: drone-git
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: drone-git
+    dockerfile: drone-git/Dockerfile
+    tags: abyssos/abyss-archive:drone-git-ppc64le
+
+steps:
+- name: docker
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: docker
+    dockerfile: docker/Dockerfile
+    tags: abyssos/abyss-archive:docker-ppc64le
 
 ---
 kind: pipeline
@@ -132,26 +198,48 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: latest-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:latest-mips64
+
+steps:
 - name: dev
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: dev-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:dev-mips64
+
+steps:
 - name: go
-  image: abyssos/junk:drone-plugins-docker
+  image: abyssos/abyss-archive:drone-plugins-docker
   settings:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: go-${DRONE_STAGE_ARCH}
+    tags: abyssos/abyss-archive:go-mips64
+
+steps:
+- name: drone-git
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: drone-git
+    dockerfile: drone-git/Dockerfile
+    tags: abyssos/abyss-archive:drone-git-mips64
+
+steps:
+- name: docker
+  image: abyssos/abyss-archive:drone-plugins-docker
+  settings:
+    <<: *cs
+    context: docker
+    dockerfile: docker/Dockerfile
+    tags: abyssos/abyss-archive:docker-mips64
 
 ---
 kind: pipeline
@@ -167,61 +255,48 @@ common_settings: &cs
   platforms:
   - linux/amd64
   - linux/arm64
-  - linux/mips64
   - linux/ppc64le
+  - linux/mips64
 
 steps:
 - name: latest
-  image: plugins/manifest
+  image: abyssos/abyss-archive:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:latest
     template: abyssos/abyss-archive:latest-ARCH
 
+steps:
 - name: dev
-  image: plugins/manifest
+  image: abyssos/abyss-archive:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:dev
     template: abyssos/abyss-archive:dev-ARCH
 
+steps:
 - name: go
-  image: plugins/manifest
+  image: abyssos/abyss-archive:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:go
     template: abyssos/abyss-archive:go-ARCH
 
-depends_on:
-- x86_64
-- aarch64
-- ppc64le
-- mips64
-
----
-kind: pipeline
-type: docker
-name: drone-manifest
-
-common_settings: &cs
-  username:
-    from_secret: DOCKER_USERNAME
-  password:
-    from_secret: DOCKER_PASSWORD
-  ignore_missing: true
-  platforms:
-  - linux/amd64
-  - linux/arm64
-  - linux/mips64
-  - linux/ppc64le
-
 steps:
 - name: drone-git
-  image: plugins/manifest
+  image: abyssos/abyss-archive:drone-plugins-manifest
   settings:
     <<: *cs
-    target: abyssos/junk:drone-git
-    template: abyssos/junk:drone-git-ARCH
+    target: abyssos/abyss:drone-git
+    template: abyssos/abyss-archive:drone-git-ARCH
+
+steps:
+- name: docker
+  image: abyssos/abyss-archive:drone-plugins-manifest
+  settings:
+    <<: *cs
+    target: abyssos/abyss:docker
+    template: abyssos/abyss-archive:docker-ARCH
 
 depends_on:
 - x86_64

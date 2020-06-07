@@ -4,7 +4,7 @@
 # ourarch:docker pairs
 PLATFORMS="x86_64:amd64 aarch64:arm64 ppc64le:ppc64le mips64:mips64"
 # list of directories to build
-IMAGES="latest dev go drone-git drone-plugins-docker drone-plugins-manifest"
+IMAGES="latest dev go drone-git docker"
 # repo to dump arch images
 TARGETREPO="abyssos/abyss-archive"
 # repo to dump the manifests in
