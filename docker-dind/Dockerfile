@@ -8,8 +8,7 @@ RUN set -eux; \
 		openssl \
 		shadow \
 		xz \
-		pigz \
-	; \
+		pigz
 
 RUN set -x \
 	&& addgroup -S dockremap \
