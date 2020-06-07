@@ -174,9 +174,9 @@ if [ "$1" = 'dockerd' ]; then
 			--copy-up=/run \
 			${DOCKERD_ROOTLESS_ROOTLESSKIT_FLAGS:-} \
 			"$@"
-	elif [ -x '/usr/local/bin/dind' ]; then
+	elif [ -x '/usr/bin/dind' ]; then
 		# if we have the (mostly defunct now) Docker-in-Docker wrapper script, use it
-		set -- '/usr/local/bin/dind' "$@"
+		set -- '/usr/bin/dind' "$@"
 	fi
 else
 	# if it isn't `dockerd` we're trying to run, pass it through `docker-entrypoint.sh` so it gets `DOCKER_HOST` set appropriately too
