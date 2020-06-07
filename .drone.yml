@@ -15,21 +15,21 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
     tags: latest-${DRONE_STAGE_ARCH}
 - name: dev
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
     tags: dev-${DRONE_STAGE_ARCH}
 - name: go
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: go
@@ -54,21 +54,21 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
     tags: latest-${DRONE_STAGE_ARCH}
 - name: dev
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
     tags: dev-${DRONE_STAGE_ARCH}
 - name: go
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: go
@@ -93,21 +93,21 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
     tags: latest-${DRONE_STAGE_ARCH}
 - name: dev
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
     tags: dev-${DRONE_STAGE_ARCH}
 - name: go
-  image: plugins/docker
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: go
@@ -116,7 +116,7 @@ steps:
 
 ---
 kind: pipeline
-type: exec
+type: docker
 name: mips64
 
 platform:
@@ -132,18 +132,21 @@ common_settings: &cs
 
 steps:
 - name: latest
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
     tags: latest-${DRONE_STAGE_ARCH}
 - name: dev
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
     tags: dev-${DRONE_STAGE_ARCH}
 - name: go
+  image: abyssos/junk:drone-plugins-docker
   settings:
     <<: *cs
     context: go
