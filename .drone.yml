@@ -15,7 +15,7 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
@@ -24,7 +24,7 @@ steps:
 
 steps:
 - name: dev
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
@@ -33,7 +33,7 @@ steps:
 
 steps:
 - name: go
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: go
@@ -42,7 +42,7 @@ steps:
 
 steps:
 - name: drone-git
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: drone-git
@@ -51,7 +51,7 @@ steps:
 
 steps:
 - name: docker
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: docker
@@ -76,7 +76,7 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
@@ -85,7 +85,7 @@ steps:
 
 steps:
 - name: dev
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
@@ -94,7 +94,7 @@ steps:
 
 steps:
 - name: go
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: go
@@ -103,7 +103,7 @@ steps:
 
 steps:
 - name: drone-git
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: drone-git
@@ -112,7 +112,7 @@ steps:
 
 steps:
 - name: docker
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: docker
@@ -137,7 +137,7 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
@@ -146,7 +146,7 @@ steps:
 
 steps:
 - name: dev
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
@@ -155,7 +155,7 @@ steps:
 
 steps:
 - name: go
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: go
@@ -164,7 +164,7 @@ steps:
 
 steps:
 - name: drone-git
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: drone-git
@@ -173,7 +173,7 @@ steps:
 
 steps:
 - name: docker
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: docker
@@ -198,7 +198,7 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: latest
@@ -207,7 +207,7 @@ steps:
 
 steps:
 - name: dev
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: dev
@@ -216,7 +216,7 @@ steps:
 
 steps:
 - name: go
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: go
@@ -225,7 +225,7 @@ steps:
 
 steps:
 - name: drone-git
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: drone-git
@@ -234,7 +234,7 @@ steps:
 
 steps:
 - name: docker
-  image: abyssos/abyss-archive:drone-plugins-docker
+  image: abyssos/abyss:drone-plugins-docker
   settings:
     <<: *cs
     context: docker
@@ -260,7 +260,7 @@ common_settings: &cs
 
 steps:
 - name: latest
-  image: abyssos/abyss-archive:drone-plugins-manifest
+  image: abyssos/abyss:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:latest
@@ -268,7 +268,7 @@ steps:
 
 steps:
 - name: dev
-  image: abyssos/abyss-archive:drone-plugins-manifest
+  image: abyssos/abyss:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:dev
@@ -276,7 +276,7 @@ steps:
 
 steps:
 - name: go
-  image: abyssos/abyss-archive:drone-plugins-manifest
+  image: abyssos/abyss:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:go
@@ -284,7 +284,7 @@ steps:
 
 steps:
 - name: drone-git
-  image: abyssos/abyss-archive:drone-plugins-manifest
+  image: abyssos/abyss:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:drone-git
@@ -292,7 +292,7 @@ steps:
 
 steps:
 - name: docker
-  image: abyssos/abyss-archive:drone-plugins-manifest
+  image: abyssos/abyss:drone-plugins-manifest
   settings:
     <<: *cs
     target: abyssos/abyss:docker

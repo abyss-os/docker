@@ -32,7 +32,7 @@ common_settings: &cs
 for i in $IMAGES; do
 echo "steps:
 - name: $i
-  image: ${TARGETREPO}:drone-plugins-docker
+  image: ${REPO}:drone-plugins-docker
   settings:
     <<: *cs
     context: $i
@@ -64,7 +64,7 @@ for i in $IMAGES; do
 echo "
 steps:
 - name: $i
-  image: ${TARGETREPO}:drone-plugins-manifest
+  image: ${REPO}:drone-plugins-manifest
   settings:
     <<: *cs
     target: ${REPO}:${i}
