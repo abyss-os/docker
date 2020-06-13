@@ -20,7 +20,7 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: abyssos/abyss-archive:latest-amd64
+    tags: latest-amd64
 
 steps:
 - name: dev
@@ -29,7 +29,7 @@ steps:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: abyssos/abyss-archive:dev-amd64
+    tags: dev-amd64
 
 steps:
 - name: go
@@ -38,7 +38,7 @@ steps:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: abyssos/abyss-archive:go-amd64
+    tags: go-amd64
 
 steps:
 - name: drone-git
@@ -47,7 +47,7 @@ steps:
     <<: *cs
     context: drone-git
     dockerfile: drone-git/Dockerfile
-    tags: abyssos/abyss-archive:drone-git-amd64
+    tags: drone-git-amd64
 
 steps:
 - name: docker
@@ -56,7 +56,7 @@ steps:
     <<: *cs
     context: docker
     dockerfile: docker/Dockerfile
-    tags: abyssos/abyss-archive:docker-amd64
+    tags: docker-amd64
 
 ---
 kind: pipeline
@@ -81,7 +81,7 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: abyssos/abyss-archive:latest-arm64
+    tags: latest-arm64
 
 steps:
 - name: dev
@@ -90,7 +90,7 @@ steps:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: abyssos/abyss-archive:dev-arm64
+    tags: dev-arm64
 
 steps:
 - name: go
@@ -99,7 +99,7 @@ steps:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: abyssos/abyss-archive:go-arm64
+    tags: go-arm64
 
 steps:
 - name: drone-git
@@ -108,7 +108,7 @@ steps:
     <<: *cs
     context: drone-git
     dockerfile: drone-git/Dockerfile
-    tags: abyssos/abyss-archive:drone-git-arm64
+    tags: drone-git-arm64
 
 steps:
 - name: docker
@@ -117,7 +117,7 @@ steps:
     <<: *cs
     context: docker
     dockerfile: docker/Dockerfile
-    tags: abyssos/abyss-archive:docker-arm64
+    tags: docker-arm64
 
 ---
 kind: pipeline
@@ -142,7 +142,7 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: abyssos/abyss-archive:latest-ppc64le
+    tags: latest-ppc64le
 
 steps:
 - name: dev
@@ -151,7 +151,7 @@ steps:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: abyssos/abyss-archive:dev-ppc64le
+    tags: dev-ppc64le
 
 steps:
 - name: go
@@ -160,7 +160,7 @@ steps:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: abyssos/abyss-archive:go-ppc64le
+    tags: go-ppc64le
 
 steps:
 - name: drone-git
@@ -169,7 +169,7 @@ steps:
     <<: *cs
     context: drone-git
     dockerfile: drone-git/Dockerfile
-    tags: abyssos/abyss-archive:drone-git-ppc64le
+    tags: drone-git-ppc64le
 
 steps:
 - name: docker
@@ -178,7 +178,7 @@ steps:
     <<: *cs
     context: docker
     dockerfile: docker/Dockerfile
-    tags: abyssos/abyss-archive:docker-ppc64le
+    tags: docker-ppc64le
 
 ---
 kind: pipeline
@@ -203,7 +203,7 @@ steps:
     <<: *cs
     context: latest
     dockerfile: latest/Dockerfile
-    tags: abyssos/abyss-archive:latest-mips64
+    tags: latest-mips64
 
 steps:
 - name: dev
@@ -212,7 +212,7 @@ steps:
     <<: *cs
     context: dev
     dockerfile: dev/Dockerfile
-    tags: abyssos/abyss-archive:dev-mips64
+    tags: dev-mips64
 
 steps:
 - name: go
@@ -221,7 +221,7 @@ steps:
     <<: *cs
     context: go
     dockerfile: go/Dockerfile
-    tags: abyssos/abyss-archive:go-mips64
+    tags: go-mips64
 
 steps:
 - name: drone-git
@@ -230,7 +230,7 @@ steps:
     <<: *cs
     context: drone-git
     dockerfile: drone-git/Dockerfile
-    tags: abyssos/abyss-archive:drone-git-mips64
+    tags: drone-git-mips64
 
 steps:
 - name: docker
@@ -239,7 +239,7 @@ steps:
     <<: *cs
     context: docker
     dockerfile: docker/Dockerfile
-    tags: abyssos/abyss-archive:docker-mips64
+    tags: docker-mips64
 
 ---
 kind: pipeline
