@@ -37,7 +37,7 @@ echo "steps:
     <<: *cs
     context: $i
     dockerfile: ${i}/Dockerfile
-    tags: ${TARGETREPO}:${i}-${p#*:}
+    tags: ${i}-${p#*:}
 ";done;
 
 echo "---";
