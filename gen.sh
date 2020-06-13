@@ -29,9 +29,9 @@ common_settings: &cs
 ";
 
 # iterate images
+echo "steps:"
 for i in $IMAGES; do
-echo "steps:
-- name: $i
+echo "- name: $i
   image: ${REPO}:drone-plugins-docker
   settings:
     <<: *cs
